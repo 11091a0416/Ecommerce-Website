@@ -1,0 +1,129 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+function calculatePrice()
+{
+     //Price list
+    SMALL_PRICE=5.00;
+    MEDIUM_PRICE=6.00;
+    LARGE_PRICE=15.00;
+    CHOCOLATE=1.20;
+    MINTCHOCOLATECHIP=1.50;
+    STRAWBERRY=1.75;
+    VANILLA=1.30;
+    SALTEDCARAMEL = 0.70;
+    SUGARFREE = 0.60;
+ ONE_PRICE=1.50;
+    TWO_PRICE=2.80;
+    WAFFLECLASSICSMALL_PRICE=1.35;
+    WAFFLECLASSICREGULAR_PRICE=1.75;
+    WAFFLECLASSICLARGE_PRICE=2.70;
+    WAFFLEBOWL_PRICE=2.95;
+    
+    var price=0.00;
+    
+    var allDataEntered=true;
+    if ($("#type").val() === "chocolate") {
+        $("body").css("background", "#d2691e" );
+      price += CHOCOLATE;
+  }
+  else if ($("#type").val() === "mintchocolatechip") {
+      $("body").css("background", "sienna" );
+      price += MINTCHOCOLATECHIP;
+     
+  }
+     else if ($("#type").val() === "strawberry") {
+         $("body").css("background", "pink" );
+      price += STRAWBERRY;
+   } 
+   else if ($("#type").val() === "vanilla")
+   {
+       $("body").css("background", "cornsilk" );
+       price += VANILLA;
+   }
+   else{
+       allDataEntered=false;
+       alert("You must select atleast one flavour.");
+   }
+  if ($(":radio[name=size]:checked").val()=== "smallsize") {
+      price += SMALL_PRICE;
+   } 
+   else if ($(":radio[name=size]:checked").val()=== "mediumsize") {
+      price += MEDIUM_PRICE;
+   } 
+   else if ($(":radio[name=size]:checked").val()=== "largesize") {
+      price += LARGE_PRICE;
+     
+   } 
+   else {
+      allDataEntered = false;
+      alert("You must select atleast one size."); 
+   }
+ 
+if ($(":radio[name=cone]:checked").val()=== "wafflesmall") {
+      price += WAFFLECLASSICSMALL_PRICE;
+   }
+   else if ($(":radio[name=cone]:checked").val()=== "waffleregular") {
+      price += WAFFLECLASSICREGULAR_PRICE;
+   }
+   else if ($(":radio[name=cone]:checked").val()=== "wafflelarge") {
+      price += WAFFLECLASSICLARGE_PRICE;
+   }
+   else if ($(":radio[name=cone]:checked").val()=== "wafflebowl") {
+      price += WAFFLEBOWL_PRICE;
+   }
+   else {
+      allDataEntered = false;
+      alert("You must select atleast one type of cone."); 
+   }
+if ($(":checkbox[name=Scoops]:checked").val()=== "onescoop") {
+      price += ONE_PRICE;
+   }
+   else if ($(":checkbox[name=Scoops]:checked").val()=== "twoscoops") {
+      price += TWO_PRICE;
+   }
+   else {
+      allDataEntered = false;
+      alert("You must select atleast one type of scoops."); 
+   }     
+     if ($(":checkbox[name=salt]:checked").val()==="salt") {
+      price += SALTEDCARAMEL;
+   } 
+   if ($(":checkbox[name=sugar]:checked").val()==="sugar") {
+      price += SUGARFREE;      
+} 
+  if(!($('#quantity').val()))
+    {
+        allDataEntered=false;
+        alert("Please enter the quantity required");
+    }else if(!(($('#quantity').val() <=10) && ($('#quantity').val()>=1))){
+        allDataEntered=false;
+        alert("Please enter the Quantitites from 1 to 10");
+    }else{
+        price*=($('#quantity').val());
+    }
+   if ($(":radio[name=cone]:checked").val()=== "") {
+      allDataEntered=false;
+        alert("Please select one type of cone");
+   } 
+   
+   if ($(":radio[name=floats]:checked").val()=== "") {
+      allDataEntered=false;
+        alert("Please select one type of floats");
+   } 
+   
+if(allDataEntered)
+{
+    $("#para1").html("The total cost is $" + (price).toFixed(2));
+    time=Math.round(Math.random()*(45-25)+25);
+    $("#time").html("Your order will be delivered in about "+time+"\tminutes");
+    $('img').slideDown(5000);
+}
+
+}
+$(document).ready(function () {
+   $('#order').click(calculatePrice);
+   $('img').hide();
+})

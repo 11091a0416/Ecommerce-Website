@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gnaneshwar Icecream Order Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="pendyala.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script  src="vxn72140.js"></script>
+    </head>
+    <body>
+        <h1>Gnaneshwar Icecream Order</h1>
+        <h1>Form</h1>
+        <p>
+            Flavour
+            <select id="type"> 
+                <option value="none">Flavour</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="mintchocolatechip"> Mint Chocolate Chip</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="vanilla">Vanilla</option>
+            </select>
+        </p>
+        <fieldset class="options">
+         <legend>Size</legend>
+         <input type="radio" name="size" value="smallsize">Small<br>
+         <input type="radio" name="size" value="mediumsize">Medium<br>
+         <input type="radio" name="size" value="largesize">Large<br>
+      </fieldset>
+      
+      <br>
+       </p>
+        <fieldset class="options">
+         <legend>Scoops</legend>
+         <input type="checkbox" name="Scoops" value="onescoop">One<br>
+         <input type="checkbox" name="Scoops" value="twoscoops">Two<br>
+         
+      </fieldset>
+      <br>
+      <fieldset class="options" id="cone">
+         <legend>Cone</legend>
+         <input type="radio" name="cone" value="wafflesmall">Waffle Classic Small<br>
+         <input type="radio" name="cone" value="waffleregular">Waffle Classic Regular<br>
+         <input type="radio" name="cone" value="wafflelarge">Waffle Classic Large<br>
+         <input type="radio" name="cone" value="wafflebowl">Waffle Bowl<br>
+      </fieldset>
+      
+      <br>
+      
+       <fieldset class="options">
+         <legend>Milk Type</legend>
+         <input type="radio" name="milktype" value="wholemilk">Whole<br>
+         <input type="radio" name="milktype" value="skimmilk">Skim<br>
+         <input type="radio" name="milktype" value="milk">2% milk<br>
+      </fieldset>
+      
+      
+      <br>
+      
+       <fieldset class="options" id="floats">
+         <legend>Floats</legend>
+         <input type="radio" name="floats" value="cherry">Cherry Coke Float soda<br>
+         <input type="radio" name="floats" value="watermelon">Cold Pressed watermelon soda<br>
+         <input type="radio" name="floats" value="mango">Mango Float<br>
+      </fieldset>
+      
+      
+      <br>
+      
+      
+        <p>
+            Quantity(1-10)
+            <input type="text" id="quantity">
+        </p>
+        <fieldset class="options">
+         <legend>Extra Topping</legend>
+         <input type="checkbox" name="salt" value="salt">Salted Caramel<br>
+         <input type="checkbox" name="sugar" value="sugar">Sugar Free Strawberry<br>
+      </fieldset>
+      <p>
+         <input type="button" id="order" value="Order">
+      </p>
+      <p id="para1" ></p>
+      <p id="time" ></p>
+      <img src="vxn72140.png" alt=" icecream image" >
+      
+    </body>
+    </html>
+
+
